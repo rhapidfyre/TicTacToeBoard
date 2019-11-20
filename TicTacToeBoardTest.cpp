@@ -20,3 +20,12 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoard, Piece) {
+  
+}
+
+TEST(TicTacToeBoard, blah) {
+  ASSERT_EQ(1, 1);
+}
+
