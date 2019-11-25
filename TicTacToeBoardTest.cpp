@@ -29,16 +29,22 @@ TEST(TicTacToeBoard, Piece) {
   ASSERT_EQ(Blank, ' ');
 }
 
-// Does toggling the turn to X work
+// Does toggling the turn from X to O work
 TEST(TicTacToeBoard, toggleTurn1) {
   TicTacToeBoard board;
   ASSERT_EQ(board.toggleTurn(), O);
 }
 
-// Can the turn be toggled to O
+// Can the turn be toggled back to X
 TEST(TicTacToeBoard, toggleTurn2) {
   TicTacToeBoard board;
   board.toggleTurn();
   ASSERT_EQ(board.toggleTurn(), X);
+}
+
+// Place the first piece
+TEST(TicTacToeBoard, placePiece1) {
+  TicTacToeBoard board;
+  ASSERT_EQ(board.placePiece(0,0), X);
 }
 
