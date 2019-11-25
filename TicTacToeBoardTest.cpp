@@ -23,15 +23,15 @@ TEST(TicTacToeBoardTest, unitTestName)
 
 // Tests each enum for validity
 TEST(TicTacToeBoard, buildBoard) {
-  ASSERT_EQ(getPiece(0,0), Blank);
-  ASSERT_EQ(getPiece(0,1), Blank);
-  ASSERT_EQ(getPiece(0,2), Blank);
-  ASSERT_EQ(getPiece(1,0), Blank);
-  ASSERT_EQ(getPiece(1,1), Blank);
-  ASSERT_EQ(getPiece(1,2), Blank);
-  ASSERT_EQ(getPiece(2,0), Blank);
-  ASSERT_EQ(getPiece(2,1), Blank);
-  ASSERT_EQ(getPiece(2,2), Blank);
+  ASSERT_EQ(board.getPiece(0,0), Blank);
+  ASSERT_EQ(board.getPiece(0,1), Blank);
+  ASSERT_EQ(board.getPiece(0,2), Blank);
+  ASSERT_EQ(board.getPiece(1,0), Blank);
+  ASSERT_EQ(board.getPiece(1,1), Blank);
+  ASSERT_EQ(board.getPiece(1,2), Blank);
+  ASSERT_EQ(board.getPiece(2,0), Blank);
+  ASSERT_EQ(board.getPiece(2,1), Blank);
+  ASSERT_EQ(board.getPiece(2,2), Blank);
 }
 
 TEST(TicTacToeBoard, checkEnums) {
