@@ -99,5 +99,5 @@ Piece TicTacToeBoard::getWinner()
     }
   }
 
-  return Invalid;
+  return Blank;
 }
