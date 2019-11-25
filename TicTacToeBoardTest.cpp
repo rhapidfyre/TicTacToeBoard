@@ -87,6 +87,14 @@ TEST(TicTacToeBoard, getPieces) {
   ASSERT_EQ(board.getPiece(0,1), O); // is 0 1 O?
 }
 
+// Does the turn toggle when a piece is placed
+TEST(TicTacToeBoard, properToggle) {
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  ASSERT_EQ(board.placePiece(0,1), O);
+}
+
+// Can you win horizontally
 TEST(TicTacToeBoard, horizontalWin) {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -97,6 +105,7 @@ TEST(TicTacToeBoard, horizontalWin) {
   ASSERT_EQ(board.getWinner(), X);
 }
 
+// Can you win vertically
 TEST(TicTacToeBoard, verticalWin) {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -107,6 +116,7 @@ TEST(TicTacToeBoard, verticalWin) {
   ASSERT_EQ(board.getWinner(), X); 
 }
 
+// Can you win diagonally from the top left
 TEST(TicTacToeBoard, diagonalWinLeft) {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -117,6 +127,7 @@ TEST(TicTacToeBoard, diagonalWinLeft) {
   ASSERT_EQ(board.getWinner(), X);
 }
 
+// Can you win from the top right
 TEST(TicTacToeBoard, diagonalWinRight) {
   TicTacToeBoard board;
   board.placePiece(2,0);
@@ -127,6 +138,7 @@ TEST(TicTacToeBoard, diagonalWinRight) {
   ASSERT_EQ(board.getWinner(), X);
 }
 
+// Ensure you can't play after a win is scored
 TEST(TicTacToeBoard, playAfterWin) { 
   TicTacToeBoard board;
   board.placePiece(2,0);
@@ -138,12 +150,15 @@ TEST(TicTacToeBoard, playAfterWin) {
   ASSERT_EQ(board.placePiece(2,2), Invalid);
 }
 
+// Make sure getWinner returns game-not-finished
 TEST(TicTacToeBoard, notFinished) {
   TicTacToeBoard board;
   board.placePiece(0,0);
   ASSERT_EQ(board.getWinner(), Invalid);
 }
 
+// Make sure that catsgame returns blank
+// Also ensures that all positions are X or O
 TEST(TicTacToeBoard, catsGame) {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -163,5 +178,21 @@ TEST(TicTacToeBoard, catsGame) {
     }
   }
   ASSERT_EQ(board.getWinner(), Blank);
+}
+
+// Ensure placePiece returns invalid after catsgame
+TEST(TicTacToeBoard, playAfterCatsGame) {
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,1);
+  board.placePiece(2,0);
+  board.placePiece(1,0);
+  board.placePiece(1,2);
+  board.placePiece(0,2);
+  board.placePiece(2,2);
+  board.placePiece(2,1);
+  board.placePiece(0,1);
+  board.getWinner();
+  ASSERT_EQ(board.placePiece(0,0), Invalid);
 }
 
