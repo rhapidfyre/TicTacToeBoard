@@ -36,8 +36,8 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  // If getWinner is not Invalid, the game is over
-  if (getWinner() != Invalid) return Invalid;
+  // If getWinner is Invalid, the game is over
+  if (getWinner() == Invalid) return Invalid;
 
   // Return invalid if parameters are out of bounds
   if (row < 0 || column < 0 || row >= BOARDSIZE || column >= BOARDSIZE)
