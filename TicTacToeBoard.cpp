@@ -99,6 +99,5 @@ Piece TicTacToeBoard::getWinner()
     }
   }
 
-  // Catsgame 
-  return Blank;
+  return Invalid;
 }
