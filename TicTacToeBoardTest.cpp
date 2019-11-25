@@ -22,7 +22,19 @@ TEST(TicTacToeBoardTest, unitTestName)
 */
 
 // Tests each enum for validity
-TEST(TicTacToeBoard, Piece) {
+TEST(TicTacToeBoard, buildBoard) {
+  ASSERT_EQ(getPiece(0,0), Blank);
+  ASSERT_EQ(getPiece(0,1), Blank);
+  ASSERT_EQ(getPiece(0,2), Blank);
+  ASSERT_EQ(getPiece(1,0), Blank);
+  ASSERT_EQ(getPiece(1,1), Blank);
+  ASSERT_EQ(getPiece(1,2), Blank);
+  ASSERT_EQ(getPiece(2,0), Blank);
+  ASSERT_EQ(getPiece(2,1), Blank);
+  ASSERT_EQ(getPiece(2,2), Blank);
+}
+
+TEST(TicTacToeBoard, checkEnums) {
   ASSERT_EQ(X, 'X');
   ASSERT_EQ(O, 'O');
   ASSERT_EQ(Invalid, '?');
@@ -61,12 +73,10 @@ TEST(TicTacToeBoard, placePieceOut) {
 // test should return that piece but not toggle turns
 TEST(TicTacToeBoard, placePieceRepeat) {
   TicTacToeBoard board;
-  board.placePiece(1,1); // X places
-  ASSERT_EQ(board.placePiece(1,1), O); // O places
+  board.placePiece(1,1); // Place X in Center
+  ASSERT_EQ(board.placePiece(1,1), X); // Place O center, return X
   ASSERT_EQ(board.toggleTurn(), X); // If turn togs to X it was O's turn still
 }
-
-
 
 
 
