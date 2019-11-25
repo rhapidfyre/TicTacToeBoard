@@ -32,13 +32,13 @@ TEST(TicTacToeBoard, Piece) {
 // Does toggling the turn to X work
 TEST(TicTacToeBoard, toggleTurn1) {
   TicTacToeBoard board;
-  ASSERT_EQ(board.toggleTurn(), X);
+  ASSERT_EQ(board.toggleTurn(), O);
 }
 
 // Can the turn be toggled to O
 TEST(TicTacToeBoard, toggleTurn2) {
   TicTacToeBoard board;
   board.toggleTurn();
-  ASSERT_EQ(board.toggleTurn(), O);
+  ASSERT_EQ(board.toggleTurn(), X);
 }
 
