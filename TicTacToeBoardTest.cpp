@@ -127,6 +127,17 @@ TEST(TicTacToeBoard, diagonalWinRight) {
   ASSERT_EQ(board.getWinner(), X);
 }
 
+TEST(TicTacToeBoard, playAfterWin) { 
+  TicTacToeBoard board;
+  board.placePiece(2,0);
+  board.placePiece(1,0);
+  board.placePiece(1,1);
+  board.placePiece(0,1);
+  board.placePiece(0,2);
+  board.getWinner();
+  ASSERT_EQ(board.placePiece(2,2), Invalid);
+}
+
 TEST(TicTacToeBoard, notFinished) {
   TicTacToeBoard board;
   board.placePiece(0,0);

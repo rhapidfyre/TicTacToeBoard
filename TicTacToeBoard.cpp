@@ -36,6 +36,9 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
+  // If getWinner is not Invalid, the game is over
+  if (getWinner() != Invalid) return Invalid;
+
   // Return invalid if parameters are out of bounds
   if (row < 0 || column < 0 || row >= BOARDSIZE || column >= BOARDSIZE)
     return Invalid;
@@ -45,6 +48,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
     board[row][column] = turn;
     toggleTurn();
   }
+  
   // Otherwise return what's there
   return board[row][column];
 }
@@ -91,8 +95,7 @@ Piece TicTacToeBoard::getWinner()
     return board[1][1];
   
   // The only possibility now is cats game, or the game is still going
-  
-  // Ensure the whole board is used up
+  // If any piece is blank and nobody won, the game is still going
   for (unsigned i = 0; i < BOARDSIZE; i++) {
     for (unsigned j = 0; j < BOARDSIZE; j++) {
       if (board[i][j] == Blank) return Invalid;
