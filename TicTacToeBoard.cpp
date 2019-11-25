@@ -70,7 +70,7 @@ Piece TicTacToeBoard::getWinner()
 
   // Ensure the whole board is used up
   for (unsigned i = 0; i < BOARDSIZE; i++) {
-    for (unsigned j = 0; j < BOARDSIZE; i++) {
+    for (unsigned j = 0; j < BOARDSIZE; j++) {
       if (getPiece(i,j) == Blank)
         return Invalid;
     }
