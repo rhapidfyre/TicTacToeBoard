@@ -72,27 +72,31 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 Piece TicTacToeBoard::getWinner()
 {
 
-  // Check for a horizontal win
+  // Check for a horizontal win / Only X or O can win
   for (unsigned i = 0; i < BOARDSIZE; i++) {
-    if (board[i][0] == board[i][1])
-      if (board[i][0] == board[i][2])
-        return board[i][0];
+    if (board[i][0] == X || board[i][0] == O)
+      if (board[i][0] == board[i][1])
+        if (board[i][0] == board[i][2])
+          return board[i][0];
   }
    
-  // Check for a vertical win
+  // Check for a vertical win // Only X or O can win
   for (unsigned i = 0; i < BOARDSIZE; i++) {
-    if (board[0][i] == board[1][i])
-      if (board[0][i] == board[2][i])
-        return board[0][i];
+    if (board[0][i] == X || board[0][i] == O)
+      if (board[0][i] == board[1][i])
+        if (board[0][i] == board[2][i])
+          return board[0][i];
   }
 
   // If the corners match the center, win
-  if (board[1][1] == board[0][0] && board[1][1] == board[2][2])
-    return board[1][1];
+  if (board[1][1] == X || board[1][1] == O)
+    if (board[1][1] == board[0][0] && board[1][1] == board[2][2])
+      return board[1][1];
 
   // Same concept as above but the other corners
-  if (board[1][1] == board[0][2] && board[1][1] == board[2][0])
-    return board[1][1];
+  if (board[1][1] == X || board[1][1] == O)
+    if (board[1][1] == board[0][2] && board[1][1] == board[2][0])
+      return board[1][1];
   
   // The only possibility now is cats game, or the game is still going
   // If any piece is blank and nobody won, the game is still going
