@@ -102,5 +102,5 @@ Piece TicTacToeBoard::getWinner()
     }
   }
 
-  return Blank;
+  return Blank; // All spots occupied; Cats Game!
 }

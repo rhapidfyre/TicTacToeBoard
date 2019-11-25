@@ -135,7 +135,7 @@ TEST(TicTacToeBoard, playAfterWin) {
   board.placePiece(0,1);
   board.placePiece(0,2);
   board.getWinner();
-  ASSERT_EQ(board.placePiece(2,2), Invalid);
+  ASSERT_EQ(board.placePiece(2,2), Blank);
 }
 
 TEST(TicTacToeBoard, notFinished) {
