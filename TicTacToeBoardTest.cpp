@@ -22,7 +22,10 @@ TEST(TicTacToeBoardTest, unitTestName)
 */
 
 TEST(TicTacToeBoard, Piece) {
-  
+  ASSERT_EQ(X, 'X');
+  ASSERT_EQ(O, 'O');
+  ASSERT_EQ(Invalid, '?');
+  ASSERT_EQ(Blank, ' ');
 }
 
 TEST(TicTacToeBoard, blah) {
