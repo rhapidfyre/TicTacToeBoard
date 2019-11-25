@@ -76,7 +76,7 @@ Piece TicTacToeBoard::getWinner()
   for (unsigned i = 0; i < BOARDSIZE; i++) {
     if (board[0][i] == board[1][i])
       if (board[0][i] == board[2][i])
-        return p;
+        return board[0][i];
   }
 
   // If the corners match the center, win
