@@ -21,6 +21,7 @@ TEST(TicTacToeBoardTest, unitTestName)
 }
 */
 
+// Tests each enum for validity
 TEST(TicTacToeBoard, Piece) {
   ASSERT_EQ(X, 'X');
   ASSERT_EQ(O, 'O');
@@ -28,7 +29,16 @@ TEST(TicTacToeBoard, Piece) {
   ASSERT_EQ(Blank, ' ');
 }
 
-TEST(TicTacToeBoard, blah) {
-  ASSERT_EQ(1, 1);
+// Does toggling the turn to X work
+TEST(TicTacToeBoard, toggleTurn1) {
+  TicTacToeBoard board;
+  ASSERT_EQ(board.toggleTurn(), X);
+}
+
+// Can the turn be toggled to O
+TEST(TicTacToeBoard, toggleTurn2) {
+  TicTacToeBoard board;
+  board.toggleTurn();
+  ASSERT_EQ(board.toggleTurn(), O);
 }
 
