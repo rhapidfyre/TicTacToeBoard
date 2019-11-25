@@ -48,3 +48,25 @@ TEST(TicTacToeBoard, placePiece1) {
   ASSERT_EQ(board.placePiece(0,0), X);
 }
 
+// Pieces out of bounds should return Invalid
+TEST(TicTacToeBoard, placePieceOut) {
+  TicTacToeBoard board;
+  ASSERT_EQ(board.placePiece(-1,8), Invalid);
+  ASSERT_EQ(board.placePiece(0,-1), Invalid);
+  ASSERT_EQ(board.placePiece(-1,-1), Invalid);
+  ASSERT_EQ(board.placePiece(8,-1), Invalid);
+}
+
+// If piece is placed where one already is,
+// test should return that piece but not toggle turns
+TEST(TicTacToeBoard, placePieceRepeat) {
+  TicTacToeBoard board;
+  board.placePiece(1,1); // X places
+  ASSERT_EQ(board.placePiece(1,1), O); // O places
+  ASSERT_EQ(board.toggleTurn(), X); // If turn togs to X it was O's turn still
+}
+
+
+
+
+
