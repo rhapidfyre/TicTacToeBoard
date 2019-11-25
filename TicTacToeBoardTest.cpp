@@ -88,21 +88,60 @@ TEST(TicTacToeBoard, getPieces) {
 }
 
 TEST(TicTacToeBoard, horizontalWin) {
-
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(0,1);
+  board.placePiece(1,0);
+  board.placePiece(1,1);
+  board.placePiece(2,0);
+  ASSERT_EQ(board.getWinner(), X);
 }
 
 TEST(TicTacToeBoard, verticalWin) {
-
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,0);
+  board.placePiece(0,1);
+  board.placePiece(1,1);
+  board.placePiece(0,2);
+  ASSERT_EQ(board.getWinner(), X); 
 }
 
 TEST(TicTacToeBoard, diagonalWinLeft) {
-
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,0);
+  board.placePiece(1,1);
+  board.placePiece(2,0);
+  board.placePiece(2,2);
+  ASSERT_EQ(board.getWinner(), X);
 }
 
-TEST(TicTacToeBoard, diagnolWinRight) {
-
+TEST(TicTacToeBoard, diagonalWinRight) {
+  TicTacToeBoard board;
+  board.placePiece(2,0);
+  board.placePiece(1,0);
+  board.placePiece(1,1);
+  board.placePiece(0,1);
+  board.placePiece(0,2);
+  ASSERT_EQ(board.getWinner(), X);
 }
 
 TEST(TicTacToeBoard, catsGame) {
-
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  board.placePiece(1,1);
+  board.placePiece(2,0);
+  board.placePiece(1,0);
+  board.placePiece(1,2);
+  board.placePiece(0,2);
+  board.placePiece(2,2);
+  board.placePiece(2,1);
+  board.placePiece(0,1);
+  for (unsigned i = 0; i < 3; i++) {
+    for (unsigned j = 0; i < 3; i++) {
+      ASSERT_NE(board.getPiece(i,j), Invalid);
+    }
+  }
+  ASSERT_EQ(board.getWinner(), Invalid);
 }

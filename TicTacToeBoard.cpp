@@ -67,5 +67,27 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
+  for (unsigned i = 0; i < BOARDSIZE; i++) {
+    enum p = board[i][0];
+    if (p == board[i][1])
+      if (p == board[i][2])
+        return p;
+  }
+
+  for (unsigned i = 0; i < BOARDSIZE; i++) {
+    enum p = board[0][i];
+    if (p == board[1][i])
+      if (p == board[2][i])
+        return p;
+  }
+
+  // If the corners match the center, win
+  if (board[1][1] == board[0][0] && board[1][1] == board[2][2])
+    return board[1][1];
+
+  // Same concept as above but the other corners
+  if (board[1][1] == board[0][2] && board[1][1] == board[2][0])
+    return board[1][1];
+  
   return Invalid;
 }
