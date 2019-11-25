@@ -127,6 +127,12 @@ TEST(TicTacToeBoard, diagonalWinRight) {
   ASSERT_EQ(board.getWinner(), X);
 }
 
+TEST(TicTacToeBoard, notFinished) {
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  ASSERT_EQ(board.getWinner(), Invalid);
+}
+
 TEST(TicTacToeBoard, catsGame) {
   TicTacToeBoard board;
   board.placePiece(0,0);
@@ -140,8 +146,11 @@ TEST(TicTacToeBoard, catsGame) {
   board.placePiece(0,1);
   for (unsigned i = 0; i < 3; i++) {
     for (unsigned j = 0; i < 3; i++) {
+      // Ensure the spot is an X or an O
       ASSERT_NE(board.getPiece(i,j), Invalid);
+      ASSERT_NE(board.getPiece(i,j), Blank);
     }
   }
-  ASSERT_EQ(board.getWinner(), Invalid);
+  ASSERT_EQ(board.getWinner(), Blank);
 }
+
