@@ -78,5 +78,11 @@ TEST(TicTacToeBoard, placePieceRepeat) {
   ASSERT_EQ(board.toggleTurn(), X); // If turn togs to X it was O's turn still
 }
 
-
+// Do pieces return properly
+TEST(TicTacToeBoard, getPieces) {
+  TicTacToeBoard board;
+  board.placePiece(0,0); // Places X in 0 0
+  board.placePiece(0,1); // Places O in 0 1
+  ASSERT_EQ(board.getPiece(0,1), O); // is 0 1 O?
+}
 
