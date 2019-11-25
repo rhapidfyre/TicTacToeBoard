@@ -23,6 +23,7 @@ TEST(TicTacToeBoardTest, unitTestName)
 
 // Tests each enum for validity
 TEST(TicTacToeBoard, buildBoard) {
+  TicTacToeBoard board;
   ASSERT_EQ(board.getPiece(0,0), Blank);
   ASSERT_EQ(board.getPiece(0,1), Blank);
   ASSERT_EQ(board.getPiece(0,2), Blank);
@@ -86,3 +87,22 @@ TEST(TicTacToeBoard, getPieces) {
   ASSERT_EQ(board.getPiece(0,1), O); // is 0 1 O?
 }
 
+TEST(TicTacToeBoard, horizontalWin) {
+
+}
+
+TEST(TicTacToeBoard, verticalWin) {
+
+}
+
+TEST(TicTacToeBoard, diagonalWinLeft) {
+
+}
+
+TEST(TicTacToeBoard, diagnolWinRight) {
+
+}
+
+TEST(TicTacToeBoard, catsGame) {
+
+}
