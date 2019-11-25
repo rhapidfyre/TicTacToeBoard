@@ -68,16 +68,14 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 Piece TicTacToeBoard::getWinner()
 {
   for (unsigned i = 0; i < BOARDSIZE; i++) {
-    enum p = board[i][0];
-    if (p == board[i][1])
-      if (p == board[i][2])
-        return p;
+    if (board[i][0] == board[i][1])
+      if (board[i][0] == board[i][2])
+        return board[i][0];
   }
 
   for (unsigned i = 0; i < BOARDSIZE; i++) {
-    enum p = board[0][i];
-    if (p == board[1][i])
-      if (p == board[2][i])
+    if (board[0][i] == board[1][i])
+      if (board[0][i] == board[2][i])
         return p;
   }
 
