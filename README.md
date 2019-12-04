@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rhapidfyre/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/rhapidfyre/TicTacToeBoard)
+[![Build Status](https://travis-ci.org/rhapidfyre/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/rhapidfyre/TicTacToeBoard)[![Coverage Status](https://coveralls.io/repos/github/rhapidfyre/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/RhapidFyre/TicTacToeBoard?branch=master)
 # TicTacToeBoard
 
 ## Associated Enumerated Types
