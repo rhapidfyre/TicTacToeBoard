@@ -3,6 +3,7 @@
 # sample Makefile provided in the official GoogleTest GitHub Repo v1.7
 
 # REMOVED FOR REQUIRED ENV in CI GTEST_DIR = /usr/local/src/googletest/googletest
+export GTEST_DIR = /usr/local/src/googletest/googletest
 
 # Flags passed to the preprocessor and compiler
 CPPFLAGS += --coverage -std=c++11 -isystem $(GTEST_DIR)/include
@@ -14,8 +15,6 @@ TESTS = TicTacToeBoardTest
 # All Google Test headers. Adjust only if you moved the subdirectory
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
-
-#export GTEST_DIR = /usr/local/src/googletest/googletest
 
 # House-keeping build targets.
 
