@@ -87,6 +87,17 @@ TEST(TicTacToeBoard, getPieces) {
   ASSERT_EQ(board.getPiece(0,1), O); // is 0 1 O?
 }
 
+TEST(TicTacToeBoard, getInvalidPiece) {
+  TicTacToeBoard board;
+  ASSERT_EQ(board.getPiece(-1,0), Invalid);
+}
+
+TEST(TicTacToeBoard, getAnotherInvalid) {
+  TicTacToeBoard board;
+  board.placePiece(0,0);
+  ASSERT_EQ(board.getPiece(0,99), Invalid);
+}
+
 // Does the turn toggle when a piece is placed
 TEST(TicTacToeBoard, properToggle) {
   TicTacToeBoard board;
