@@ -17,8 +17,8 @@ script:
   - make
   - ./TicTacToeBoardTest
 
-before_install:
-  - pip install --user cpp-coveralls
+#before_install:
+  #- pip install --user cpp-coveralls
 
-after_success:
-  - coveralls --exclude *Test.cpp --exclude ${GTEST_DIR} --gcov-options '\-lpbc'
+#after_success:
+  #- coveralls --exclude *Test.cpp --exclude ${GTEST_DIR} --gcov-options '\-lpbc'

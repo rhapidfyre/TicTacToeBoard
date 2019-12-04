@@ -15,7 +15,7 @@ TESTS = TicTacToeBoardTest
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
 
-export GTEST_DIR = /usr/local/src/googletest/googletest
+#export GTEST_DIR = /usr/local/src/googletest/googletest
 
 # House-keeping build targets.
 
